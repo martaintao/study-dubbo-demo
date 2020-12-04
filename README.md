@@ -207,105 +207,110 @@ dubbo:
 >
 > > dubbo官方推荐做法是尽量在provider端多做配置，比如timeout这种配置，应该在服务提供者端配置，而不是在消费者端配置，因为提供者更清楚他提供的方法大致会花费多长时间。（虽然按照dubbo的配置覆盖规则，在consumer端的配置会覆盖provider端的配置）。
 >
-> ```java
-> @Documented
-> @Retention(RetentionPolicy.RUNTIME)
-> @Target({ElementType.TYPE})
-> @Inherited
-> public @interface DubboService {
->     Class<?> interfaceClass() default void.class;
-> 
->     String interfaceName() default "";
-> 
->     String version() default "";
-> 
->     String group() default "";
-> 
->     String path() default "";
-> 
->     boolean export() default true;
-> 
->     String token() default "";
-> 
->     boolean deprecated() default false;
-> 
->     boolean dynamic() default true;
-> 
->     String accesslog() default "";
-> 
->     int executes() default 0;
-> 
->     boolean register() default true;
-> 
->     int weight() default 0;
-> 
->     String document() default "";
-> 
->     int delay() default 0;
-> 
->     /** @deprecated */
->     String local() default "";
-> 
->     String stub() default "";
-> 
->     String cluster() default "";
-> 
->     String proxy() default "";
-> 
->     int connections() default 0;
-> 
->     int callbacks() default 1;
-> 
->     String onconnect() default "";
-> 
->     String ondisconnect() default "";
-> 
->     String owner() default "";
-> 
->     String layer() default "";
-> 
->     int retries() default 2;
-> 
->     String loadbalance() default "random";
-> 
->     boolean async() default false;
-> 
->     int actives() default 0;
-> 
->     boolean sent() default false;
-> 
->     String mock() default "";
-> 
->     String validation() default "";
-> 
->     int timeout() default 0;
-> 
->     String cache() default "";
-> 
->     String[] filter() default {};
-> 
->     String[] listener() default {};
-> 
->     String[] parameters() default {};
-> 
->     String application() default "";
-> 
->     String module() default "";
-> 
->     String provider() default "";
-> 
->     String[] protocol() default {};
-> 
->     String monitor() default "";
-> 
->     String[] registry() default {};
-> 
->     String tag() default "";
-> 
->     Method[] methods() default {};
-> }
-> ```
->
+
+<details>
+<summary>@DubboReference</summary>
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+@Inherited
+public @interface DubboService {
+    Class<?> interfaceClass() default void.class;
+
+    String interfaceName() default "";
+
+    String version() default "";
+
+    String group() default "";
+
+    String path() default "";
+
+    boolean export() default true;
+
+    String token() default "";
+
+    boolean deprecated() default false;
+
+    boolean dynamic() default true;
+
+    String accesslog() default "";
+
+    int executes() default 0;
+
+    boolean register() default true;
+
+    int weight() default 0;
+
+    String document() default "";
+
+    int delay() default 0;
+
+    /** @deprecated */
+    String local() default "";
+
+    String stub() default "";
+
+    String cluster() default "";
+
+    String proxy() default "";
+
+    int connections() default 0;
+
+    int callbacks() default 1;
+
+    String onconnect() default "";
+
+    String ondisconnect() default "";
+
+    String owner() default "";
+
+    String layer() default "";
+
+    int retries() default 2;
+
+    String loadbalance() default "random";
+
+    boolean async() default false;
+
+    int actives() default 0;
+
+    boolean sent() default false;
+
+    String mock() default "";
+
+    String validation() default "";
+
+    int timeout() default 0;
+
+    String cache() default "";
+
+    String[] filter() default {};
+
+    String[] listener() default {};
+
+    String[] parameters() default {};
+
+    String application() default "";
+
+    String module() default "";
+
+    String provider() default "";
+
+    String[] protocol() default {};
+
+    String monitor() default "";
+
+    String[] registry() default {};
+
+    String tag() default "";
+
+    Method[] methods() default {};
+}
+```
+
+</details>
 
 ```java
 package com.martain.provide.service;
