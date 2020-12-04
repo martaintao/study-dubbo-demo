@@ -209,7 +209,7 @@ dubbo:
 >
 
 <details>
-<summary>@DubboReference</summary>
+<summary>@DubboService</summary>
 
 ```java
 @Documented
