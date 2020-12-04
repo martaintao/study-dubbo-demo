@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: provider-service
+dubbo:
+  application:
+    name: provider-nacos-service
+  registry:
+    address: nacos://127.0.0.1:8848
+    timeout: 10000
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.martain.provide.service

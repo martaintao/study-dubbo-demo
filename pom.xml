@@ -10,8 +10,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>common-api</module>
-        <module>provider-service</module>
-        <module>consume-service</module>
+        <module>provider-service-nacos</module>
+        <module>consume-service-nacos</module>
+        <module>provider-service-zookeeper</module>
+        <module>consumer-service-zookeeper</module>
     </modules>
 
 
